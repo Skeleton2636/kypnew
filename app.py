@@ -9,7 +9,7 @@ model = pickle.load(open('model.pkl','rb'))
 def home():
     return render_template('home.html')
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predictscore', methods=['POST'])
 def predict1():
 
     int_features = [int(x) for x in request.form.values()]
