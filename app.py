@@ -12,11 +12,12 @@ def home():
 @app.route('/predictscore', methods=['POST'])
 def predict1():
 
-    int_features = [int(x) for x in request.form.values()]
-    final_features = [np.array(int_features)]
-    prediction = model.predict(final_features)
+    input_features = [int(x) for x in request.form.values()]
+    in_fea = [np.array(input_features)]
+    pred = model.predict(in_fea)
 
-    return prediction
+    return render_template('after.html', data=pred[0])
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     app.run(debug=True)
