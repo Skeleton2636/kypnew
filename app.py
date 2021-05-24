@@ -16,7 +16,7 @@ def predict1():
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
-    return render_template('after.html', data=prediction[0])
+    return prediction
 
 if __name__ == "__main__":
     app.run(debug=True)
